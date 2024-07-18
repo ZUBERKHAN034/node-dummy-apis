@@ -11,12 +11,12 @@ app.get('/get', (_req, res) => {
 });
 
 app.post('/post', (req, res) => {
-	console.log('POST request received', req.body);
+	console.log('POST request received', JSON.stringify(req.body, null, 2));
 	res.status(200).send({ status: 'success', message: req.body });
 });
 
 app.post('/postform', (req, res) => {
-	console.log('POST request received', req.body);
+	console.log('POST FORM request received', JSON.stringify(req.body, null, 2));
 	res
 		.status(200)
 		.send(JSON.stringify({ status: 'success', message: req.body }));
